@@ -1,0 +1,15 @@
+version: "3"
+services:
+  nuxt:
+    container_name: VRCFavoLister
+    build:
+      context: .
+      dockerfile: ./build/nuxt/Dockerfile
+      args:
+        - APPNAME=VRCFavoLister
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./nuxt/app:/app"
+    tty: true
+    stdin_open: true
