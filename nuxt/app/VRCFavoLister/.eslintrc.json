@@ -9,7 +9,8 @@
     "standard-with-typescript",
     "plugin:@typescript-eslint/recommended",
     "@nuxtjs/eslint-config-typescript",
-    "plugin:nuxt/recommended"
+    "plugin:nuxt/recommended",
+    "prettier"
   ],
   "overrides": [],
   "parserOptions": {
