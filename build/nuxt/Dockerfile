@@ -5,7 +5,7 @@ ENV APPNAME=${APPNAME}
 WORKDIR /app/${APPNAME}
 
 # nuxiのインストール
-RUN yarn global add nuxi
+RUN yarn global add nuxi vercel
 
 # スクリプトに実行権限を付与
 COPY ./build/nuxt/init.sh /init.sh
