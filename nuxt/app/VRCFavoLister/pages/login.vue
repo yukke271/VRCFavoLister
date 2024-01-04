@@ -5,7 +5,7 @@
     <form @submit="onSubmit">
       <input v-model="email" v-bind="emailAttrs" name="email" type="email" />
       <span>{{ errors.email }}</span>
-
+      <br />
       <input
         v-model="password"
         v-bind="passwordAttrs"
@@ -13,7 +13,7 @@
         type="password"
       />
       <span>{{ errors.password }}</span>
-
+      <br />
       <button>Submit</button>
     </form>
   </div>
@@ -24,14 +24,8 @@ import { useForm } from "vee-validate";
 import * as yup from "yup";
 
 const schema = yup.object({
-  email: yup
-    .string()
-    .email("メールアドレスの形式で入力してください")
-    .required("この項目は必須です"),
-  password: yup
-    .string()
-    .min(8, "８文字以上で入力してください")
-    .required("この項目は必須です"),
+  email: yup.string().email().required(),
+  password: yup.string().min(8).label("8").required(),
 });
 
 const { defineField, errors, handleSubmit } = useForm({
