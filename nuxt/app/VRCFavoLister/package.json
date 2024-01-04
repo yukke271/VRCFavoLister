@@ -9,7 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
-    "lintfix": "prettier --write --list-different . && yarn lint --fix"
+    "lintfix": "prettier --write --list-different . && yarn lint --fix",
+    "restart": "rm -rf /tmp/nitro/worker-* && yarn dev"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
