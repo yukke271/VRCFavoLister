@@ -20,7 +20,6 @@
 </template>
 
 <script setup>
-import { useForm } from "vee-validate";
 import * as yup from "yup";
 
 const schema = yup.object({
@@ -35,7 +34,10 @@ const { defineField, errors, handleSubmit } = useForm({
 const [email, emailAttrs] = defineField("email");
 const [password, passwordAttrs] = defineField("password");
 
-const onSubmit = handleSubmit((values) => {
+const onSubmit = handleSubmit(async (values) => {
   alert(JSON.stringify(values, null, 2));
+
+  const loginResponse = await loginToVRChatAPI(values.email, values.password);
+  alert("Login successful! User Info:", loginResponse);
 });
 </script>
