@@ -7,8 +7,8 @@
   },
   "compilerOptions": {
     // "types": ["@nuxt/types", "@nuxt/typescript-build"],
-    // "typeRoots": ["@/node_modules/@types", "@/types"],
-    "typeRoots": ["./node_modules/@types"],
+    "typeRoots": ["@/node_modules/@types", "@/types"],
+    // "typeRoots": ["./node_modules/@types"],
     "paths": {
       "~/*": ["./*"],
       "@/*": ["./*"]

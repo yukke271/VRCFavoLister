@@ -9,12 +9,15 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
-    "lintfix": "prettier --write --list-different . && yarn lint --fix"
+    "lintfix": "prettier --write --list-different . && yarn lint --fix",
+    "restart": "rm -rf /tmp/nitro/worker-* && yarn dev"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@typescript-eslint/eslint-plugin": "^6.17.0",
     "@typescript-eslint/parser": "^6.17.0",
+    "@vee-validate/nuxt": "^4.12.4",
+    "@vee-validate/yup": "^4.12.4",
     "@vercel/analytics": "^1.1.1",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
@@ -29,7 +32,9 @@
     "nuxt": "^3.9.0",
     "prettier": "^3.1.1",
     "typescript": "*",
+    "vee-validate": "^4.12.4",
     "vue": "^3.4.3",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "yup": "^1.3.3"
   }
 }
