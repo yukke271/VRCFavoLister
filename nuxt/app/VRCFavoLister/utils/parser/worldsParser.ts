@@ -19,4 +19,6 @@ export const worldsParser = (json: string) => {
   worldsJson.forEach((world: World) => {
     worldList.push(world);
   });
+
+  return worldList;
 };

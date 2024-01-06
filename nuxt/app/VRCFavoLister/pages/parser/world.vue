@@ -13,7 +13,7 @@
 const worlds = ref("");
 
 const parseWorlds = () => {
-  const worldsList = worldsParser(worlds.value);
+  const worldsList: World[] = worldsParser(worlds.value);
   devLog(worldsList);
 };
 </script>
