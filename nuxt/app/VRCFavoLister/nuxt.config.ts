@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
-      phase: "development",
+      phase: "release",
     },
   },
   imports: {
