@@ -6,7 +6,9 @@
     <v-spacer />
 
     <v-toolbar-items v-if="!isMobile()">
-      <NuxtLink to="/"> Top pages </NuxtLink>
+      <div v-for="item in items" :key="item.title">
+        <NuxtLink :to="item.value"> {{ item.title }} </NuxtLink>
+      </div>
     </v-toolbar-items>
     <v-app-bar-nav-icon
       v-else
@@ -16,13 +18,33 @@
   </v-app-bar>
 
   <v-navigation-drawer v-model="drawer" location="right" temporary>
-    <v-list :items="items" />
+    <v-list>
+      <v-list-item v-for="item in items" :key="item.title">
+        <NuxtLink :to="item.value">
+          {{ item.title }}
+        </NuxtLink>
+      </v-list-item>
+    </v-list>
   </v-navigation-drawer>
 </template>
 
 <script setup lang="ts">
 const drawer = ref(false); // ドロワーの開閉状態
-const items = ref([{ title: "Home", value: "/" }]); // メニューのリスト
+const items = [
+  // メニューのリスト
+  {
+    title: "Top page",
+    value: "/",
+  },
+  {
+    title: "World Parser",
+    value: "/parser/world",
+  },
+  {
+    title: "Avatar Parser",
+    value: "/parser/avatar",
+  },
+];
 const isMobile = () => {
   /* UserAgentが廃止になるため、別の方法を考える
   const userAgent = window.navigator.userAgent.toLowerCase();
