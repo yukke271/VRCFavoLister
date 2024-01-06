@@ -1,8 +1,9 @@
 import "vuetify/styles";
 import { createVuetify } from "vuetify";
 import { aliases, mdi } from "vuetify/iconsets/mdi-svg";
-import * as components from "vuetify/components";
-import * as directives from "vuetify/directives";
+// import * as components from "vuetify/components";
+// import * as VApp from "vuetify/lib/components/VApp";
+// import * as directives from "vuetify/directives";
 
 const defaultTheme = {
   dark: false,
@@ -21,8 +22,9 @@ const defaultTheme = {
 export default defineNuxtPlugin((nuxtApp) => {
   const vuetify = createVuetify({
     ssr: true,
-    components,
-    directives,
+    // components,
+    // VApp,
+    // directives,
     theme: {
       defaultTheme: "defaultTheme",
       dark: false,
