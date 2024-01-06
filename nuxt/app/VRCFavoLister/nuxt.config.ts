@@ -1,5 +1,15 @@
+import vuetify from "vite-plugin-vuetify";
+
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  build: {
+    transpile: ["vuetify"],
+  },
+  hooks: {
+    "vite:extendConfig": (config) => {
+      config.plugins!.push(vuetify());
+    },
+  },
   runtimeConfig: {
     public: {
       phase: "release",
@@ -14,6 +24,9 @@ export default defineNuxtConfig({
       watch: {
         usePolling: true,
       },
+    },
+    ssr: {
+      noExternal: ["vuetify"],
     },
   },
   modules: ["@vee-validate/nuxt"],
