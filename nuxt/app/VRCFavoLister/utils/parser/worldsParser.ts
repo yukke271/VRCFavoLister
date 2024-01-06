@@ -3,10 +3,10 @@
  * included in `@/utils/index.ts`
  *
  * 受け取ったjson配列をWorld型の配列に変換する
- * @param text
- * @returns World型の配列
+ * @param worldList World型の配列
+ * @param json json配列
  */
-export const worldsParser = (json: string) => {
+export const worldsParser = (worldList: World[], json: string) => {
   // 受け取ったjson配列をパースする
   let worldsJson: JSON[] = [];
   try {
@@ -15,10 +15,7 @@ export const worldsParser = (json: string) => {
     throw new Error("JSONのパースに失敗しました");
   }
 
-  const worldList: World[] = [];
   worldsJson.forEach((world: World) => {
     worldList.push(world);
   });
-
-  return worldList;
 };
