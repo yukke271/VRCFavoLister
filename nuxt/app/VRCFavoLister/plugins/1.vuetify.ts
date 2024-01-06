@@ -6,7 +6,7 @@ const defaultTheme = {
   colors: {
     background: "#FFFFFF",
     surface: "#FFFFFF",
-    primary: "#6200EE",
+    primary: "#FFFFFF",
     secondary: "#03DAC6",
     error: "#B00020",
     info: "#2196F3",
