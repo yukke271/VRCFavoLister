@@ -6,8 +6,7 @@
     <v-spacer />
 
     <v-toolbar-items v-if="!isMobile()">
-      <!-- Home Button -->
-      <v-btn to="/">home</v-btn>
+      <NuxtLink to="/"> Top pages </NuxtLink>
     </v-toolbar-items>
     <v-app-bar-nav-icon
       v-else
@@ -17,14 +16,15 @@
   </v-app-bar>
 
   <v-navigation-drawer v-model="drawer" location="right" temporary>
-    <v-list :items="items"></v-list>
+    <v-list :items="items" />
   </v-navigation-drawer>
 </template>
 
 <script setup lang="ts">
 const drawer = ref(false); // ドロワーの開閉状態
-const items = ref([{ title: "Home", value: "/00" }]); // メニューのリスト
+const items = ref([{ title: "Home", value: "/" }]); // メニューのリスト
 const isMobile = () => {
+  /* UserAgentが廃止になるため、別の方法を考える
   const userAgent = window.navigator.userAgent.toLowerCase();
   devLog(userAgent);
   if (
@@ -32,6 +32,17 @@ const isMobile = () => {
     userAgent.includes("ipad") ||
     userAgent.includes("android") ||
     userAgent.includes("mobile")
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+  */
+
+  // 画面幅で判定する
+  if (
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(max-device-width: 640px)").matches
   ) {
     return true;
   } else {
