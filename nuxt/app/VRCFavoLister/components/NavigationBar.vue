@@ -52,8 +52,12 @@ const items = [
     value: "/",
   },
   {
-    title: "World Parser",
+    title: "Favo World Lister",
     value: "/parser/world",
+  },
+  {
+    title: "Favo Avatar Lister",
+    value: "/parser/avatar",
   },
 ];
 </script>
