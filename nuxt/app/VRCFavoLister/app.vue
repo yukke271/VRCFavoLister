@@ -16,7 +16,7 @@
 useHead({
   titleTemplate: (titleChunk) => {
     return (
-      titleChunk?.trim().concat(" - VRChat Favo Lister") ?? "VRChat Favo Lister"
+      titleChunk?.trim().concat(" - ぶいちゃふぁぼりす") ?? "ぶいちゃふぁぼりす"
     );
   },
   title: null, // default <title>VRChat Favo Lister</title>
@@ -36,24 +36,30 @@ useHead({
       name: "keywords",
       content: "vrchat, VRChat, お気に入り, Favorite, 整理",
     },
-    // <meta name="description" content="My amazing site.">
-    { name: "description", content: "My amazing site." },
+    {
+      name: "description",
+      content:
+        "VRChatのためのツールで、自分がお気に入りに入れたワールドやアバターを整理するためのものです。",
+    },
   ],
 });
 
 useSeoMeta({
   // OGP
-  ogUrl: "https://example.com/",
-  ogTitle: "My Amazing Site",
-  ogDescription: "This is my amazing site, let me tell you all about it.",
+  ogUrl: "https://vrc-favo-lister.yukke.dev/",
+  ogTitle: "ぶいちゃふぁぼりす",
+  ogDescription:
+    "VRChatのためのツールで、自分がお気に入りに入れたワールドやアバターを整理するためのものです。",
   ogType: "website",
-  ogSiteName: "My Amazing Site",
+  ogSiteName: "ぶいちゃふぁぼりす",
   ogImage: "https://example.com/image.png",
   // Twitter
   twitterCard: "summary_large_image",
-  twitterTitle: "My Amazing Site",
-  twitterDescription: "This is my amazing site, let me tell you all about it.",
+  twitterSite: "@yukke_dev",
+  twitterTitle: "ぶいちゃふぁぼりす",
+  twitterDescription:
+    "VRChatのためのツールで、自分がお気に入りに入れたワールドやアバターを整理するためのものです。",
   twitterImage: "https://example.com/image.png",
-  twitterSite: "@Twitter",
+  twitterImageAlt: "ぶいちゃふぁぼりす",
 });
 </script>
