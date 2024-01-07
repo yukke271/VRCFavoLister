@@ -1,26 +1,29 @@
 <template>
   <v-app-bar color="primary" prominent>
-    <v-toolbar-title>My files</v-toolbar-title>
-    <v-spacer />
-    <v-spacer />
-    <v-spacer />
-
-    <v-toolbar-items v-if="!isMobile()">
-      <div v-for="item in items" :key="item.title">
-        <NuxtLink :to="item.value"> {{ item.title }} </NuxtLink>
-      </div>
-    </v-toolbar-items>
+    <!--<v-spacer />-->
     <v-app-bar-nav-icon
-      v-else
+      v-if="!device"
+      variant="text"
+      @click.stop="drawer = !drawer"
+    ></v-app-bar-nav-icon>
+
+    <v-toolbar-title>My files</v-toolbar-title>
+
+    <v-app-bar-nav-icon
+      v-if="device"
       variant="text"
       @click.stop="drawer = !drawer"
     ></v-app-bar-nav-icon>
   </v-app-bar>
 
-  <v-navigation-drawer v-model="drawer" location="right" temporary>
+  <v-navigation-drawer
+    v-model="drawer"
+    :location="device ? 'right' : 'left'"
+    temporary
+  >
     <v-list>
-      <v-list-item v-for="item in items" :key="item.title">
-        <NuxtLink :to="item.value">
+      <v-list-item v-for="item in items" :key="item.title" class="parent">
+        <NuxtLink :to="item.value" class="child">
           {{ item.title }}
         </NuxtLink>
       </v-list-item>
@@ -30,8 +33,10 @@
 
 <script setup lang="ts">
 const drawer = ref(false); // ドロワーの開閉状態
+const device = isMobile(); // 現在のデバイスがモバイルであればtrueを返す
+
+// ページ内リンク先
 const items = [
-  // メニューのリスト
   {
     title: "Top page",
     value: "/",
@@ -40,35 +45,20 @@ const items = [
     title: "World Parser",
     value: "/parser/world",
   },
-  {
-    title: "Avatar Parser",
-    value: "/parser/avatar",
-  },
 ];
-const isMobile = () => {
-  /* UserAgentが廃止になるため、別の方法を考える
-  const userAgent = window.navigator.userAgent.toLowerCase();
-  devLog(userAgent);
-  if (
-    userAgent.includes("iphone") ||
-    userAgent.includes("ipad") ||
-    userAgent.includes("android") ||
-    userAgent.includes("mobile")
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-  */
-
-  // 画面幅で判定する
-  if (
-    typeof window.matchMedia === "function" &&
-    window.matchMedia("(max-device-width: 640px)").matches
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-};
 </script>
+
+<style scoped>
+.parent {
+  position: relative;
+}
+
+.parent .child {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+</style>
