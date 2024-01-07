@@ -17,7 +17,7 @@
       max-height="40"
     ></v-img>
     -->
-    <v-toolbar-title>My files</v-toolbar-title>
+    <v-toolbar-title>ぶいちゃふぁぼりす</v-toolbar-title>
 
     <v-app-bar-nav-icon
       v-if="device"
@@ -52,11 +52,11 @@ const items = [
     value: "/",
   },
   {
-    title: "Favo World Lister",
+    title: "World Lister",
     value: "/parser/world",
   },
   {
-    title: "Favo Avatar Lister",
+    title: "Avatar Lister",
     value: "/parser/avatar",
   },
 ];
