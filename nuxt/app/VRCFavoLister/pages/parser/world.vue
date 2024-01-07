@@ -2,18 +2,14 @@
   <v-container>
     <v-row justify="center">
       <v-col cols="12" sm="10" md="8" lg="6">
-        <div>
-          <h1>world parser!</h1>
-          <NuxtLink to="/"> Top pages </NuxtLink>
-          <br />
-          <v-textarea
-            v-model="worlds"
-            label="ここに貼り付け"
-            outlined
-          ></v-textarea>
-          <br />
-          <v-btn @click="parseWorlds">parse</v-btn>
-        </div>
+        <h1>Favo World Lister</h1>
+        <v-textarea
+          v-model="worlds"
+          label="ここに貼り付け"
+          outlined
+        ></v-textarea>
+        <br />
+        <v-btn @click="parseWorlds">parse</v-btn>
       </v-col>
 
       <v-col cols="12" sm="10" md="8" lg="6">
