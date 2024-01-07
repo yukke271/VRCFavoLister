@@ -2,7 +2,7 @@
   <v-container>
     <v-row justify="center">
       <v-col cols="12" sm="10" md="8" lg="6">
-        <h1>Favo World Lister</h1>
+        <h1>World Lister</h1>
         <v-textarea
           v-model="worlds"
           label="ここに貼り付け"
@@ -28,4 +28,8 @@ const worldsList = ref<World[]>([]);
 const parseWorlds = () => {
   worldsParser(worldsList.value, worlds.value);
 };
+
+useHead({
+  title: "WorldLister",
+});
 </script>
