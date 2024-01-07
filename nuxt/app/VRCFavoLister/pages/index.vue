@@ -4,8 +4,6 @@
 
     <NuxtLink to="/parser/world"> Favo World Lister </NuxtLink>
     <br />
-    <!--
     <NuxtLink to="/parser/avatar"> Favo Avatar Lister </NuxtLink>
-    -->
   </div>
 </template>
