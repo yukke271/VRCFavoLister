@@ -7,8 +7,7 @@
       </v-main>
     </v-app>
     <template #fallback>
-      <!-- サーバーサイドでレンダリングされる部分 -->
-      <p>Loading ...</p>
+      <PageLoding />
     </template>
   </ClientOnly>
 </template>
