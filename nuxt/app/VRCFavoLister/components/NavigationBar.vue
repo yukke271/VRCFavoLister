@@ -7,6 +7,16 @@
       @click.stop="drawer = !drawer"
     ></v-app-bar-nav-icon>
 
+    <!-- Logo -->
+    <!--
+    <v-img
+      src="/logo.svg"
+      min-width="112"
+      min-height="40"
+      max-width="112"
+      max-height="40"
+    ></v-img>
+    -->
     <v-toolbar-title>My files</v-toolbar-title>
 
     <v-app-bar-nav-icon
