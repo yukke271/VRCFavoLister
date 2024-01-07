@@ -17,7 +17,7 @@
       max-height="40"
     ></v-img>
     -->
-    <v-toolbar-title>VRChat Favo Lister</v-toolbar-title>
+    <v-toolbar-title>ぶいちゃふぁぼりす</v-toolbar-title>
 
     <v-app-bar-nav-icon
       v-if="device"
