@@ -13,9 +13,11 @@
       </v-col>
 
       <v-col cols="12" sm="10" md="8" lg="6">
-        <div v-for="world in worldsList" :key="world.id">
-          <ParserWorldCard :world="world" />
-        </div>
+        <v-row justify="center">
+          <v-col v-for="world in worldsList" :key="world.id" cols="6">
+            <ParserWorldCard :world="world" />
+          </v-col>
+        </v-row>
       </v-col>
     </v-row>
   </v-container>
