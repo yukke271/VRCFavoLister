@@ -4,7 +4,7 @@
       <v-col cols="12" sm="10" md="8" lg="8">
         <h1>Avatar Lister</h1>
         <v-btn
-          href="https://vrchat.com/api/1/avatars/favorites?n=300&offset=0"
+          href="https://vrchat.com/home"
           target="_blank"
           >VRChatにログイン</v-btn
         >
