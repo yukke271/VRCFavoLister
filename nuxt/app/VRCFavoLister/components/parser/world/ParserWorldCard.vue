@@ -25,14 +25,18 @@ const props = defineProps<{
 let isPC = false;
 let isQuest = false;
 
-props.world.unityPackages.forEach((unityPackage) => {
-  if (unityPackage.platform === "standalonewindows") {
-    isPC = true;
-  }
-  if (unityPackage.platform === "android") {
-    isQuest = true;
-  }
-});
+if (props.world.unityPackages.length >= 1) {
+  props.world.unityPackages.forEach((unityPackage) => {
+    if (unityPackage.platform === "standalonewindows") {
+      isPC = true;
+    }
+    if (unityPackage.platform === "android") {
+      isQuest = true;
+    }
+  });
+} else {
+  devLog(props.world);
+}
 </script>
 
 <style scoped>
