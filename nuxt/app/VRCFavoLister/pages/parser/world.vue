@@ -24,7 +24,7 @@
           outlined
         ></v-textarea>
         <v-btn @click="parseWorlds">リスト化</v-btn>
-        <v-btn @click="downloadJSON">JSON形式でダウンロード</v-btn>
+        <v-btn @click="downloadToJSON">JSON形式でダウンロード</v-btn>
       </v-col>
 
       <v-col cols="12" sm="10" md="8" lg="8">
@@ -60,6 +60,10 @@ const parseWorlds = () => {
   } catch (error) {
     alert(error);
   }
+};
+
+const downloadToJSON = () => {
+  downloadJSON(worldsList.value);
 };
 
 useHead({
