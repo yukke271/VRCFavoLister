@@ -33,9 +33,9 @@
   >
     <v-list>
       <v-list-item v-for="item in items" :key="item.title" class="parent">
-        <NuxtLink :to="item.value" class="child">
+        <v-btn :to="item.value" class="child">
           {{ item.title }}
-        </NuxtLink>
+        </v-btn>
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
