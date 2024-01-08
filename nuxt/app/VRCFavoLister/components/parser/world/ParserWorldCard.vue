@@ -4,11 +4,10 @@
     target="_blank"
     class="container"
   >
-    <v-card :image="props.world.thumbnailImageUrl" height="200" class="card">
-      <v-card-text class="incard">
-        <p class="title">{{ props.world.name }}</p>
-      </v-card-text>
-    </v-card>
+    <v-img :aspect-ratio="861 / 725" :src="props.world.thumbnailImageUrl" />
+    <div class="incard">
+      <p class="title">{{ props.world.name }}</p>
+    </div>
     <div :class="`pc ${isPC ? '' : 'grayout'}`">
       <span>PC</span>
     </div>
@@ -57,7 +56,7 @@ props.world.unityPackages.forEach((unityPackage) => {
   position: absolute;
   display: flex;
 
-  top: 5%;
+  top: 10%;
   right: 15%;
   width: 2rem;
   height: 2rem;
@@ -79,7 +78,7 @@ props.world.unityPackages.forEach((unityPackage) => {
   position: absolute;
   display: flex;
 
-  top: 5%;
+  top: 10%;
   right: 5%;
   width: 2rem;
   height: 2rem;
