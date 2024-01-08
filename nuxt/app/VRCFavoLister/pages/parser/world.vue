@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col cols="12" sm="10" md="8" lg="6">
+      <v-col cols="12" sm="10" md="8" lg="8">
         <h1>World Lister</h1>
         <v-textarea
           v-model="worlds"
@@ -12,9 +12,16 @@
         <v-btn @click="parseWorlds">parse</v-btn>
       </v-col>
 
-      <v-col cols="12" sm="10" md="8" lg="6">
+      <v-col cols="12" sm="10" md="8" lg="8">
         <v-row justify="center">
-          <v-col v-for="world in worldsList" :key="world.id" cols="6">
+          <v-col
+            v-for="world in worldsList"
+            :key="world.id"
+            cols="12"
+            sm="6"
+            md="4"
+            lg="4"
+          >
             <ParserWorldCard :world="world" />
           </v-col>
         </v-row>
