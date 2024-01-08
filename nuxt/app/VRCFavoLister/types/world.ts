@@ -1,8 +1,4 @@
 // worldParser で使用する型定義
-export interface unityPackages {
-  platform: string; // プラットフォーム
-}
-
 export interface World {
   id: string; // URLに含まれるID
   name: string; // ワールド名

@@ -17,7 +17,7 @@
       max-height="40"
     ></v-img>
     -->
-    <v-toolbar-title>My files</v-toolbar-title>
+    <v-toolbar-title>ぶいちゃふぁぼりす</v-toolbar-title>
 
     <v-app-bar-nav-icon
       v-if="device"
@@ -33,9 +33,9 @@
   >
     <v-list>
       <v-list-item v-for="item in items" :key="item.title" class="parent">
-        <NuxtLink :to="item.value" class="child">
+        <v-btn :to="item.value" class="child">
           {{ item.title }}
-        </NuxtLink>
+        </v-btn>
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
@@ -52,8 +52,12 @@ const items = [
     value: "/",
   },
   {
-    title: "World Parser",
+    title: "World Lister",
     value: "/parser/world",
+  },
+  {
+    title: "Avatar Lister",
+    value: "/parser/avatar",
   },
 ];
 </script>

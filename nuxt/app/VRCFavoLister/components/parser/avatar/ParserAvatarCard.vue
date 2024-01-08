@@ -1,12 +1,12 @@
 <template>
   <a
-    :href="`https://vrchat.com/home/world/${props.world.id}`"
+    :href="`https://vrchat.com/home/avatar/${props.avatar.id}`"
     target="_blank"
     class="container"
   >
-    <v-img :aspect-ratio="861 / 725" :src="props.world.thumbnailImageUrl" />
+    <v-img :aspect-ratio="861 / 725" :src="props.avatar.thumbnailImageUrl" />
     <div class="incard">
-      <p class="title">{{ props.world.name }}</p>
+      <p class="title">{{ props.avatar.name }}</p>
     </div>
     <div :class="`pc ${isPC ? '' : 'grayout'}`">
       <span>PC</span>
@@ -19,14 +19,14 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-  world: World;
+  avatar: Avatar;
 }>();
 
 let isPC = false;
 let isQuest = false;
 
-if (props.world.unityPackages.length >= 1) {
-  props.world.unityPackages.forEach((unityPackage) => {
+if (props.avatar.unityPackages.length >= 1) {
+  props.avatar.unityPackages.forEach((unityPackage) => {
     if (unityPackage.platform === "standalonewindows") {
       isPC = true;
     }
@@ -35,7 +35,7 @@ if (props.world.unityPackages.length >= 1) {
     }
   });
 } else {
-  devLog(props.world);
+  devLog(props.avatar);
 }
 </script>
 

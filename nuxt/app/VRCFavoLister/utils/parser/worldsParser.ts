@@ -12,7 +12,7 @@ export const worldsParser = (worldList: World[], json: string) => {
   try {
     worldsJson = JSON.parse(json);
   } catch (error) {
-    throw new Error("JSONのパースに失敗しました");
+    throw new Error("データの読み取りに失敗しました");
   }
 
   worldsJson.forEach((world: World) => {

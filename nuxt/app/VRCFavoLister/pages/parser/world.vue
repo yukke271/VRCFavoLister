@@ -1,21 +1,45 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col cols="12" sm="10" md="8" lg="6">
-        <h1>Favo World Lister</h1>
+      <v-col cols="12" sm="10" md="8" lg="8">
+        <h1>World Lister</h1>
+        <v-btn
+          href="https://vrchat.com/api/1/avatars/favorites?n=300&offset=0"
+          target="_blank"
+          >VRChatにログイン</v-btn
+        >
+        <v-btn
+          href="https://vrchat.com/api/1/worlds/favorites?n=200&offset=0"
+          target="_blank"
+          >APIを呼び出す(前半分)</v-btn
+        >
+        <v-btn
+          href="https://vrchat.com/api/1/worlds/favorites?n=200&offset=200"
+          target="_blank"
+          >APIを呼び出す(後半分)</v-btn
+        >
         <v-textarea
           v-model="worlds"
           label="ここに貼り付け"
           outlined
         ></v-textarea>
-        <br />
-        <v-btn @click="parseWorlds">parse</v-btn>
+        <v-btn @click="parseWorlds">リスト化</v-btn>
+        <v-btn @click="downloadToJSON">JSON形式でダウンロード</v-btn>
       </v-col>
 
-      <v-col cols="12" sm="10" md="8" lg="6">
-        <div v-for="world in worldsList" :key="world.id">
-          <ParserWorldCard :world="world" />
-        </div>
+      <v-col cols="12" sm="10" md="8" lg="8">
+        <v-row justify="center">
+          <v-col
+            v-for="world in worldsList"
+            :key="world.id"
+            cols="12"
+            sm="6"
+            md="4"
+            lg="4"
+          >
+            <ParserWorldCard :world="world" />
+          </v-col>
+        </v-row>
       </v-col>
     </v-row>
   </v-container>
@@ -26,6 +50,23 @@ const worlds = ref("");
 const worldsList = ref<World[]>([]);
 
 const parseWorlds = () => {
-  worldsParser(worldsList.value, worlds.value);
+  devLog(worlds.value);
+  if (worlds.value.trim() === "") {
+    alert("APIから取得した文字列を貼り付けてください");
+    return;
+  }
+  try {
+    worldsParser(worldsList.value, worlds.value);
+  } catch (error) {
+    alert(error);
+  }
 };
+
+const downloadToJSON = () => {
+  downloadJSON(worldsList.value);
+};
+
+useHead({
+  title: "WorldLister",
+});
 </script>
