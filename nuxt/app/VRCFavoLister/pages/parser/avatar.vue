@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row justify="center">
-      <v-col cols="12" sm="10" md="8" lg="6">
+      <v-col cols="12" sm="10" md="8" lg="8">
         <h1>Avatar Lister</h1>
         <v-textarea
           v-model="avatars"
@@ -12,10 +12,19 @@
         <v-btn @click="parseAvatars">parse</v-btn>
       </v-col>
 
-      <v-col cols="12" sm="10" md="8" lg="6">
-        <div v-for="avatar in avatarsList" :key="avatar.id">
-          <ParserAvatarCard :avatar="avatar" />
-        </div>
+      <v-col cols="12" sm="10" md="8" lg="8">
+        <v-row justify="center">
+          <v-col
+            v-for="avatar in avatarsList"
+            :key="avatar.id"
+            cols="12"
+            sm="6"
+            md="4"
+            lg="4"
+          >
+            <ParserAvatarCard :avatar="avatar" />
+          </v-col>
+        </v-row>
       </v-col>
     </v-row>
   </v-container>
