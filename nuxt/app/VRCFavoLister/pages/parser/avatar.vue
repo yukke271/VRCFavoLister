@@ -19,6 +19,7 @@
           outlined
         ></v-textarea>
         <v-btn @click="parseAvatars">リスト化</v-btn>
+        <v-btn @click="downloadJSON">JSON形式でダウンロード</v-btn>
       </v-col>
 
       <v-col cols="12" sm="10" md="8" lg="8">
